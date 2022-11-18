@@ -6,10 +6,14 @@ node ('qemuusermode-runner2'){
         checkout scm
     }
     stage ('*** make ***'){
-        make CC=riscv64-unknown-linux-gnu-gcc
+        sh'''#!/bin/bash
+            make CC=riscv64-unknown-linux-gnu-gcc
+        '''
     }
     stage ('*** Run ***'){
-        qemu-riscv64 -L "$RISCV_SYSROOT" ./dhrystone
+        sh'''#!/bin/bash
+            qemu-riscv64 -L $RISCV_SYSROOT ./dhrystone
+        '''
     }
 }
 node ('riscv64-runner1'){
@@ -20,9 +24,13 @@ node ('riscv64-runner1'){
         checkout scm
     }
     stage ('*** make ***'){
-        make
+        sh'''#!/bin/bash
+            make
+        '''
     }
     stage ('*** Run ***'){
-        ./dhrystone
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
     }
 }
