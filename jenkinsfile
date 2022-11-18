@@ -1,0 +1,28 @@
+node ('qemuusermode-runner2'){
+    stage ('*** Cleanup ***'){
+        cleanWs()
+    }
+    stage ('*** Check out SCM ***'){
+        checkout scm
+    }
+    stage ('*** make ***'){
+        make CC=riscv64-unknown-linux-gnu-gcc
+    }
+    stage ('*** Run ***'){
+        qemu-riscv64 -L $RISCV_SYSROOT ./dhrystone
+    }
+}
+node ('riscv64-runner1'){
+    stage ('*** Cleanup ***'){
+        cleanWs()
+    }
+    stage ('*** Check out SCM ***'){
+        checkout scm
+    }
+    stage ('*** make ***'){
+        make
+    }
+    stage ('*** Run ***'){
+        ./dhrystone
+    }
+}
