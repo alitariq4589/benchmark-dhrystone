@@ -1,4 +1,4 @@
-node ('qemuusermode-runner2'){
+node ('qemuusermode_runner2'){
     stage ('*** Cleanup ***'){
         cleanWs()
     }
@@ -16,7 +16,7 @@ node ('qemuusermode-runner2'){
         '''
     }
 }
-node ('riscv64-runner1'){
+node ('riscv64_runner1'){
     stage ('*** Cleanup ***'){
         cleanWs()
     }
