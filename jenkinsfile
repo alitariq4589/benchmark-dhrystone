@@ -16,7 +16,7 @@ node ('qemuusermode_runner2'){
         '''
     }
     stage ('Cleanup'){
-        cleanWs
+        cleanWs()
     }
 }
 node ('riscv64_runner1'){
