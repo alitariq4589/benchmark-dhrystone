@@ -1,0 +1,242 @@
+node ('sf1-1'){
+    stage ('*** Cleanup sf1-1 ***'){
+        cleanWs()
+    }
+    stage('*** Checkout SCM sf1-1 ***'){
+      sh"""#!/bin/bash
+        source ~/.bash_aliases
+        set +e
+        git_clone_func https://github.com/alitariq4589/benchmark-dhrystone.git
+        set -e
+      """
+    }
+    stage ('*** make sf1-1 ***'){
+        sh'''#!/bin/bash
+            make CC=gcc
+        '''
+    }
+    stage ('*** Run sf1-1 ***'){
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
+    }
+    stage ('Cleanup sf1-1'){
+        cleanWs()
+    }
+}
+
+node ('sf1-2'){
+    stage ('*** Cleanup sf1-2 ***'){
+        cleanWs()
+    }
+    stage('*** Checkout SCM sf1-2 ***'){
+      sh"""#!/bin/bash
+        source ~/.bash_aliases
+        set +e
+        git_clone_func https://github.com/alitariq4589/benchmark-dhrystone.git
+        set -e
+      """
+    }
+    stage ('*** make sf1-2 ***'){
+        sh'''#!/bin/bash
+            make CC=gcc
+        '''
+    }
+    stage ('*** Run sf1-2 ***'){
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
+    }
+    stage ('Cleanup sf1-2'){
+        cleanWs()
+    }
+}
+
+node ('sf1-3'){
+    stage ('*** Cleanup sf1-3 ***'){
+        cleanWs()
+    }
+    stage('*** Checkout SCM sf1-3 ***'){
+      sh"""#!/bin/bash
+        source ~/.bash_aliases
+        set +e
+        git_clone_func https://github.com/alitariq4589/benchmark-dhrystone.git
+        set -e
+      """
+    }
+    stage ('*** make sf1-3 ***'){
+        sh'''#!/bin/bash
+            make CC=gcc
+        '''
+    }
+    stage ('*** Run sf1-3 ***'){
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
+    }
+    stage ('Cleanup sf1-3'){
+        cleanWs()
+    }
+}
+
+node ('sf2-1'){
+    stage ('*** Cleanup sf2-1 ***'){
+        cleanWs()
+    }
+    stage('*** Checkout SCM sf2-1 ***'){
+      sh"""#!/bin/bash
+        source ~/.bash_aliases
+        set +e
+        git_clone_func https://github.com/alitariq4589/benchmark-dhrystone.git
+        set -e
+      """
+    }
+    stage ('*** make sf2-1 ***'){
+        sh'''#!/bin/bash
+            make CC=gcc
+        '''
+    }
+    stage ('*** Run sf2-1 ***'){
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
+    }
+    stage ('Cleanup sf2-1'){
+        cleanWs()
+    }
+}
+
+node ('sf2-2'){
+    stage ('*** Cleanup sf2-2 ***'){
+        cleanWs()
+    }
+    stage('*** Checkout SCM sf2-2 ***'){
+      sh"""#!/bin/bash
+        source ~/.bash_aliases
+        set +e
+        git_clone_func https://github.com/alitariq4589/benchmark-dhrystone.git
+        set -e
+      """
+    }
+    stage ('*** make sf2-2 ***'){
+        sh'''#!/bin/bash
+            make CC=gcc
+        '''
+    }
+    stage ('*** Run sf2-2 ***'){
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
+    }
+    stage ('Cleanup sf2-2'){
+        cleanWs()
+    }
+}
+
+node ('sf2-3'){
+    stage ('*** Cleanup sf2-3 ***'){
+        cleanWs()
+    }
+    stage('*** Checkout SCM sf2-3 ***'){
+      sh"""#!/bin/bash
+        source ~/.bash_aliases
+        set +e
+        git_clone_func https://github.com/alitariq4589/benchmark-dhrystone.git
+        set -e
+      """
+    }
+    stage ('*** make sf2-3 ***'){
+        sh'''#!/bin/bash
+            make CC=gcc
+        '''
+    }
+    stage ('*** Run sf2-3 ***'){
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
+    }
+    stage ('Cleanup sf2-3'){
+        cleanWs()
+    }
+}
+
+node ('sf2-4'){
+    stage ('*** Cleanup sf2-4 ***'){
+        cleanWs()
+    }
+    stage('*** Checkout SCM sf2-4 ***'){
+      sh"""#!/bin/bash
+        source ~/.bash_aliases
+        set +e
+        git_clone_func https://github.com/alitariq4589/benchmark-dhrystone.git
+        set -e
+      """
+    }
+    stage ('*** make sf2-4 ***'){
+        sh'''#!/bin/bash
+            make CC=gcc
+        '''
+    }
+    stage ('*** Run sf2-4 ***'){
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
+    }
+    stage ('Cleanup sf2-4'){
+        cleanWs()
+    }
+}
+
+node ('unleashed1-1'){
+    stage ('*** Cleanup unleashed1-1 ***'){
+        cleanWs()
+    }
+    stage('*** Checkout unleashed1-1 ***'){
+      sh"""#!/bin/bash
+        source ~/.bash_aliases
+        set +e
+        git_clone_func https://github.com/alitariq4589/benchmark-dhrystone.git
+        set -e
+      """
+    }
+    stage ('*** make unleashed1-1 ***'){
+        sh'''#!/bin/bash
+            make CC=gcc
+        '''
+    }
+    stage ('*** Run unleashed1-1 ***'){
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
+    }
+    stage ('Cleanup unleashed1-1'){
+        cleanWs()
+    }
+}
+
+node ('unleashed1-2'){
+    stage ('*** Cleanup unleashed1-2 ***'){
+        cleanWs()
+    }
+    stage('*** Checkout SCM unleashed1-2 ***'){
+      sh"""#!/bin/bash
+        source ~/.bash_aliases
+        set +e
+        git_clone_func https://github.com/alitariq4589/benchmark-dhrystone.git
+        set -e
+      """
+    }
+    stage ('*** make unleashed1-2 ***'){
+        sh'''#!/bin/bash
+            make CC=gcc
+        '''
+    }
+    stage ('*** Run unleashed1-2 ***'){
+        sh'''#!/bin/bash
+            ./dhrystone
+        '''
+    }
+    stage ('Cleanup unleashed1-2'){
+        cleanWs()
+    }
+}
