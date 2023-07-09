@@ -17,7 +17,7 @@ node ('sf1-1'){
     }
     stage ('*** Run sf1-1 ***'){
         sh'''#!/bin/bash
-            ./dhrystone
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}'
         '''
     }
     stage ('Cleanup sf1-1'){
