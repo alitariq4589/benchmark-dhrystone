@@ -17,7 +17,9 @@ node ('sf1-1'){
     }
     stage ('*** Run sf1-1 ***'){
         sh'''#!/bin/bash
-            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}'
+            echo "[INFO]: Printing results to file"
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}' >> ~/dhrystones_per_seconds
+            echo "\n" >> ~/dhrystones_per_seconds
         '''
     }
     stage ('Cleanup sf1-1'){
@@ -44,7 +46,9 @@ node ('sf1-2'){
     }
     stage ('*** Run sf1-2 ***'){
         sh'''#!/bin/bash
-            ./dhrystone
+            echo "[INFO]: Printing results to file"
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}' >> ~/dhrystones_per_seconds
+            echo "\n" >> ~/dhrystones_per_seconds
         '''
     }
     stage ('Cleanup sf1-2'){
@@ -71,7 +75,9 @@ node ('sf1-3'){
     }
     stage ('*** Run sf1-3 ***'){
         sh'''#!/bin/bash
-            ./dhrystone
+            echo "[INFO]: Printing results to file"
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}' >> ~/dhrystones_per_seconds
+            echo "\n" >> ~/dhrystones_per_seconds
         '''
     }
     stage ('Cleanup sf1-3'){
@@ -96,9 +102,11 @@ node ('sf2-1'){
             make CC=gcc
         '''
     }
-    stage ('*** Run sf2-1 ***'){
+   stage ('*** Run sf2-1 ***'){
         sh'''#!/bin/bash
-            ./dhrystone
+            echo "[INFO]: Printing results to file"
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}' >> ~/dhrystones_per_seconds
+            echo "\n" >> ~/dhrystones_per_seconds
         '''
     }
     stage ('Cleanup sf2-1'){
@@ -125,7 +133,9 @@ node ('sf2-2'){
     }
     stage ('*** Run sf2-2 ***'){
         sh'''#!/bin/bash
-            ./dhrystone
+            echo "[INFO]: Printing results to file"
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}' >> ~/dhrystones_per_seconds
+            echo "\n" >> ~/dhrystones_per_seconds
         '''
     }
     stage ('Cleanup sf2-2'){
@@ -152,7 +162,9 @@ node ('sf2-3'){
     }
     stage ('*** Run sf2-3 ***'){
         sh'''#!/bin/bash
-            ./dhrystone
+            echo "[INFO]: Printing results to file"
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}' >> ~/dhrystones_per_seconds
+            echo "\n" >> ~/dhrystones_per_seconds
         '''
     }
     stage ('Cleanup sf2-3'){
@@ -179,7 +191,9 @@ node ('sf2-4'){
     }
     stage ('*** Run sf2-4 ***'){
         sh'''#!/bin/bash
-            ./dhrystone
+            echo "[INFO]: Printing results to file"
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}' >> ~/dhrystones_per_seconds
+            echo "\n" >> ~/dhrystones_per_seconds
         '''
     }
     stage ('Cleanup sf2-4'){
@@ -206,7 +220,9 @@ node ('unleashed1-1'){
     }
     stage ('*** Run unleashed1-1 ***'){
         sh'''#!/bin/bash
-            ./dhrystone
+            echo "[INFO]: Printing results to file"
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}' >> ~/dhrystones_per_seconds
+            echo "\n" >> ~/dhrystones_per_seconds
         '''
     }
     stage ('Cleanup unleashed1-1'){
@@ -233,7 +249,9 @@ node ('unleashed1-2'){
     }
     stage ('*** Run unleashed1-2 ***'){
         sh'''#!/bin/bash
-            ./dhrystone
+            echo "[INFO]: Printing results to file"
+            ./dhrystone | grep 'Dhrystones per Second' | awk '{print $4}' >> ~/dhrystones_per_seconds
+            echo "\n" >> ~/dhrystones_per_seconds
         '''
     }
     stage ('Cleanup unleashed1-2'){
